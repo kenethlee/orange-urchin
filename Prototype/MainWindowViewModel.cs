@@ -51,6 +51,7 @@ namespace Prototype
         }
 
         public List<string> AnswerIds { get; set; }
+        public int PlotId { get; set; }
     }
 
     public class Answer
@@ -87,9 +88,6 @@ namespace Prototype
         {
             _kb = kb ?? throw new ArgumentNullException(nameof(kb));
 
-            // dummy
-            _hist.Add(1, 1);
-
             InitializeLinePlot();
             LinePlotHost = new WindowsFormsHost {Child = _linePlot};
 
@@ -108,9 +106,8 @@ namespace Prototype
 
         private void ResetLinePlot()
         {
-            //errorValueCounter_ = 0;
-            //reportedErrorValues_.Clear();
-            //reportedErrorValues_.Add(-1, 0);
+            _hist.Clear();
+            _hist.Add(0, 0);
             UpdateLinePlot();
         }
 
@@ -131,9 +128,6 @@ namespace Prototype
             _linePlot.Series[LinePlotSeriesName].XValueMember = "Key";
             _linePlot.Series[LinePlotSeriesName].YValueMembers = "Value";
 
-            //cursor_.X = errorValueCounter_ % XAxisMaximum;
-            //_linePlot.Annotations.Remove(cursor_);
-            //_linePlot.Annotations.Add(cursor_);
             _linePlot.Refresh();
         }
 
@@ -165,7 +159,7 @@ namespace Prototype
                     {
                         MainQuestion = Question,
                         Count = 1,
-                        AnswerIds = Answers.Select(x => x.Id).OrderBy(x => x).ToList()
+                        AnswerIds = Answers.Select(x => x.Id).ToList()
                     };
 
                     var duplicates = FindDuplicates(q).ToList();
@@ -176,9 +170,19 @@ namespace Prototype
                         ++entryWithMaxCount.Count;
                         entryWithMaxCount.AltQuestionIds.Add(q.Id);
                         q.AltQuestionIds.Add(entryWithMaxCount.Id);
+
+                        _hist[entryWithMaxCount.PlotId]++;
+                    }
+                    else
+                    {
+                        ++_plotIdCounter;
+                        _hist.Add(_plotIdCounter, 1);
                     }
 
+                    q.PlotId = _plotIdCounter;
                     UnansweredQuestions.Add(q);
+
+                    UpdateLinePlot();
                 }
             }
             //catch (Exception)
@@ -202,10 +206,12 @@ namespace Prototype
             {
                 var count = existingQuestion.AnswerIds.Where((t, i) => t == q.AnswerIds[i]).Count();
                 if (count >= similarityCountThreshold)
+                {
                     dups.Add(existingQuestion);
 
-                if (existingQuestion.Count > 1)
-                    break;
+                    if (existingQuestion.Count > 1)
+                        break;
+                }
             }
             return dups;
         }
@@ -233,5 +239,6 @@ namespace Prototype
         private const string LinePlotSeriesName = "series";
         private Chart _linePlot;
         private readonly Dictionary<int, int> _hist = new Dictionary<int, int>();
+        private int _plotIdCounter;
     }
 }
