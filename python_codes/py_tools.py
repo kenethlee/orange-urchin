@@ -263,6 +263,14 @@ def search(kb_id, question):
 
     return json.loads(response.text)
 
+
+def analyze_query_answers(results):
+    id_score_pair = []
+    for r in results:
+        id_score_pair.append( (r['id'], r['confidence']) )
+    return id_score_pair
+
+
 def read_token():
     with open("token", "r") as f:
         return f.read()

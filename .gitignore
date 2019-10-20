@@ -267,3 +267,4 @@ __pycache__
 /python_codes/token
 /python_codes/*.ipynb
 *.DS_Store
+*.pth

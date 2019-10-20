@@ -1,0 +1,42 @@
+﻿index,Original question,Paraphrase,in KB
+33,How do I get the Tesla app?,How can I get the app from Tesla?,FALSE
+33,How do I get the Tesla app?,How do I get the app from Tesla?,FALSE
+33,How do I get the Tesla app?,How do I get an app from Tesla?,FALSE
+33,How do I get the Tesla app?,How can I get an update from Tesla?,FALSE
+33,How do I get the Tesla app?,How am I getting the app from Tesla?,FALSE
+33,How do I get the Tesla app?,How can I get the app from Tesla?,FALSE
+27,When and how will I receive my license plate(s)?,When and how do I get my license plate(s)?,FALSE
+27,When and how will I receive my license plate(s)?,When and how are my license plate(s) going to be received?,FALSE
+27,When and how will I receive my license plate(s)?,When and how am I going to get my license plate(s)?,FALSE
+27,When and how will I receive my license plate(s)?,When will I get my license plate(s) and how?,FALSE
+27,When and how will I receive my license plate(s)?,How and when do I get my license plate(s)?,FALSE
+27,When and how will I receive my license plate(s)?,When and how are my license plate(s) going to be received?,FALSE
+4,Tesla doesn’t have a Service Center in my state. Can I still pick up my Tesla at a Service Center in a different state?,Tesla is not in my state with a Service Center. Can I still pick up my Tesla in a different state at a service center?,FALSE
+4,Tesla doesn’t have a Service Center in my state. Can I still pick up my Tesla at a Service Center in a different state?,"In my city, Tesla has no Service Center. Could I pick up my Tesla in another state at a Service Center?",FALSE
+4,Tesla doesn’t have a Service Center in my state. Can I still pick up my Tesla at a Service Center in a different state?,Tesla is not in my country with a service center. Could I pick up my Tesla in another state at a service center?,FALSE
+4,Tesla doesn’t have a Service Center in my state. Can I still pick up my Tesla at a Service Center in a different state?,"In my city, Tesla does not have a service center. Can I still pick up my Tesla in another country at a service center?",FALSE
+4,Tesla doesn’t have a Service Center in my state. Can I still pick up my Tesla at a Service Center in a different state?,Tesla has no Service Center in my own country. Can I pick up my Tesla in a different state at a service center?,FALSE
+4,Tesla doesn’t have a Service Center in my state. Can I still pick up my Tesla at a Service Center in a different state?,Tesla has no Service Center in my country. Could I pick up my Tesla in another state at a Service Center?,FALSE
+13,Can I make payments from more than one account?,Can I use more than one account to make payments?,FALSE
+13,Can I make payments from more than one account?,May I make more than one bank payments?,FALSE
+13,Can I make payments from more than one account?,May I make more than one account's payments?,FALSE
+13,Can I make payments from more than one account?,May I make multi-account payments?,FALSE
+13,Can I make payments from more than one account?,May I make more than one credit payments?,FALSE
+3,How do I pick up my vehicle?,How am I going to pick up my car?,TRUE
+3,How do I pick up my vehicle?,How do I get my vehicle?,TRUE
+3,How do I pick up my vehicle?,How do I pick up my car?,TRUE
+3,How do I pick up my vehicle?,How can I pick up my car?,TRUE
+28,What information do you need from me before delivery?,"Until shipment, what information do you need from me?",TRUE
+28,What information do you need from me before delivery?,"Prior to delivery, what details do you need from me?",TRUE
+28,What information do you need from me before delivery?,Which details do you need me in advance of delivery?,TRUE
+28,What information do you need from me before delivery?,Before delivery what information do you need from me?,TRUE
+28,What information do you need from me before delivery?,"Before shipment, what details do you need me?",TRUE
+25,Can I register my car to a business?,May I sign a company with my car?,TRUE
+25,Can I register my car to a business?,May I register my car for a company?,TRUE
+25,Can I register my car to a business?,Can I register my car in an enterprise?,TRUE
+25,Can I register my car to a business?,Can I sign my car with a company?,TRUE
+29,Do I need to have my insurance policy active for my Tesla before delivery?,Do I need to be involved with my Tesla insurance policy before delivery?,TRUE
+29,Do I need to have my insurance policy active for my Tesla before delivery?,Do I need my Tesla insurance policy to be effective prior to delivery?,TRUE
+29,Do I need to have my insurance policy active for my Tesla before delivery?,Do I need my insurance policy to be active before delivery for my Tesla?,TRUE
+29,Do I need to have my insurance policy active for my Tesla before delivery?,Do I need to be involved in my Tesla insurance policy before delivery?,TRUE
+29,Do I need to have my insurance policy active for my Tesla before delivery?,Do I need my Tesla insurance policy to be effective until delivery?,TRUE
