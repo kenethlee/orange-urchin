@@ -132,6 +132,8 @@
                     </DataGridTemplateColumn>
                 </DataGrid.Columns>
             </DataGrid>
+
+            <ContentControl Grid.Row="3" Content="{Binding LinePlotHost}"/>
         </Grid>
     </Grid>
 </Window>
