@@ -1,8 +1,9 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel;
 using System.Runtime.CompilerServices;
+using Prototype.Interfaces;
 
-namespace Prototype
+namespace Prototype.Utilities
 {
     public class ObservableObject : INotifyPropertyChangedEx
     {

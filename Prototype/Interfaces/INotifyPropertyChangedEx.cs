@@ -1,6 +1,6 @@
 ﻿using System.ComponentModel;
 
-namespace Prototype
+namespace Prototype.Interfaces
 {
     public delegate void PropertyChangedExEventHandler(object sender, string propertyName, object newValue, object oldValue);
 
