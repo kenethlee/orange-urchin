@@ -95,6 +95,31 @@ def del_kb(kb_id):
     print(response.text)
 
 
+def get_doc(kb_id, doc_id):
+    url = base_url+"/"+kb_id+\
+    "/languages/en-US/documents/"+doc_id
+
+    headers = {
+        'Content-Type': "application/json",
+        'organizationid': "180dba95-1ab6-44b0-9c94-4630e8d280bf",
+        'token': "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6IjE4MGRiYTk1LTFhYjYtNDRiMC05Yzk0LTQ2MzBlOGQyODBiZiIsImV4cCI6MTU3MTU0NTU4NywiaWF0IjoxNTcxNTQxOTg3fQ.28qryp8_2UKC1C03_t9fQnb6x2LWCwtVEwGf131TMyU",
+        'User-Agent': "PostmanRuntime/7.18.0",
+        'Accept': "*/*",
+        'Cache-Control': "no-cache",
+        'Postman-Token': "f7e225c4-4e65-4712-9ae3-4451683c2835,62bde82a-96ec-42ad-a8c4-327ce847b64a",
+        'Host': "api.genesysappliedresearch.com",
+        'Accept-Encoding': "gzip, deflate",
+        'Connection': "keep-alive",
+        'cache-control': "no-cache"
+        }
+
+    response = requests.request("GET", url, headers=headers)
+
+    # print(response.text)
+
+    return json.loads(response.text)
+
+
 def get_docs(kb_id, specific_uri=None):
     url = base_url+"/"+kb_id+\
     "/languages/en-US/documents"
@@ -121,6 +146,17 @@ def get_docs(kb_id, specific_uri=None):
     # print(response.text)
 
     return json.loads(response.text)
+
+
+def get_all_docs(kb_id):
+    result = get_docs(kb_id)
+    new_result = result.copy()
+    while new_result['nextUri'] is not None:
+        new_result = get_docs(kb_id, new_result['nextUri'])
+        result['entities'] = result['entities'] + new_result['entities']
+        result['count'] = result['count'] + new_result['count']
+    return result
+
 
 def create_doc(kb_id, doc_str):
 
@@ -216,7 +252,7 @@ def search(kb_id, question):
     headers = {
     'Content-Type': "application/json",
     'organizationid': "180dba95-1ab6-44b0-9c94-4630e8d280bf",
-    'token': "eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJvcmdJZCI6IjE4MGRiYTk1LTFhYjYtNDRiMC05Yzk0LTQ2MzBlOGQyODBiZiIsImV4cCI6MTU3MTU0MDQ4OCwiaWF0IjoxNTcxNTM2ODg4fQ.S9eYdkX00vcJkR93ytDOcwYZISV6yuQRAy5-Ull9wdM",
+    'token': read_token(),
     'cache-control': "no-cache",
     'Postman-Token': "028f1529-2dd3-4121-ab37-4a487b8f0831"
     }
